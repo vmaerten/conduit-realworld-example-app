@@ -1,34 +1,30 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { useAuth } from "./AuthContext";
+import { createContext, useContext, useEffect, useState } from 'react'
+import { useAuth } from './AuthContext'
 
-const FeedContext = createContext();
+const FeedContext = createContext()
 
 export function useFeedContext() {
-  return useContext(FeedContext);
+  return useContext(FeedContext)
 }
 
 function FeedProvider({ children }) {
-  const { isAuth } = useAuth();
+  const { isAuth } = useAuth()
   const [{ tabName, tagName }, setTab] = useState({
-    tabName: isAuth ? "feed" : "global",
-    tagName: "",
-  });
+    tabName: isAuth ? 'feed' : 'global',
+    tagName: '',
+  })
 
   useEffect(() => {
-    setTab((tab) => ({ ...tab, tabName: isAuth ? "feed" : "global" }));
-  }, [isAuth]);
+    setTab((tab) => ({ ...tab, tabName: isAuth ? 'feed' : 'global' }))
+  }, [isAuth])
 
   const changeTab = async (e, tabName) => {
-    const tagName = e.target.innerText.trim();
+    const tagName = e.target.innerText.trim()
 
-    setTab({ tabName, tagName });
-  };
+    setTab({ tabName, tagName })
+  }
 
-  return (
-    <FeedContext.Provider value={{ changeTab, tabName, tagName }}>
-      {children}
-    </FeedContext.Provider>
-  );
+  return <FeedContext.Provider value={{ changeTab, tabName, tagName }}>{children}</FeedContext.Provider>
 }
 
-export default FeedProvider;
+export default FeedProvider

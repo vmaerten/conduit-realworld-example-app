@@ -1,5 +1,5 @@
-import ArticleEditorForm from "../components/ArticleEditorForm";
-import ContainerRow from "../components/ContainerRow";
+import ArticleEditorForm from '../components/ArticleEditorForm'
+import ContainerRow from '../components/ContainerRow'
 
 function ArticleEditor() {
   return (
@@ -10,7 +10,7 @@ function ArticleEditor() {
         </div>
       </ContainerRow>
     </div>
-  );
+  )
 }
 
-export default ArticleEditor;
+export default ArticleEditor

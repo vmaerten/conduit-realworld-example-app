@@ -9,7 +9,7 @@ function ArticleTags({ tagList }) {
         ))}
       </ul>
     )
-  );
+  )
 }
 
-export default ArticleTags;
+export default ArticleTags

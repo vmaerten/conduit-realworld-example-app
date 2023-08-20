@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import ContainerRow from "../ContainerRow";
+import { Link } from 'react-router-dom'
+import ContainerRow from '../ContainerRow'
 
 function AuthPageContainer({ children, error, path, text, title }) {
   return (
@@ -21,7 +21,7 @@ function AuthPageContainer({ children, error, path, text, title }) {
         </div>
       </ContainerRow>
     </div>
-  );
+  )
 }
 
-export default AuthPageContainer;
+export default AuthPageContainer

@@ -1,22 +1,14 @@
-import ReactPaginate from "react-paginate";
-import { useAuth } from "../../context/AuthContext";
-import getArticles from "../../services/getArticles";
+import ReactPaginate from 'react-paginate'
+import { useAuth } from '../../context/AuthContext'
+import getArticles from '../../services/getArticles'
 
-function ArticlesPagination({
-  articlesCount,
-  location,
-  tagName,
-  updateArticles,
-  username,
-}) {
-  const totalPages = Math.ceil(articlesCount / 3);
-  const { headers } = useAuth();
+function ArticlesPagination({ articlesCount, location, tagName, updateArticles, username }) {
+  const totalPages = Math.ceil(articlesCount / 3)
+  const { headers } = useAuth()
 
   const handlePageChange = ({ selected: page }) => {
-    getArticles({ headers, location, page, username, tagName })
-      .then(updateArticles)
-      .catch(console.error);
-  };
+    getArticles({ headers, location, page, username, tagName }).then(updateArticles).catch(console.error)
+  }
 
   return (
     <ReactPaginate
@@ -37,7 +29,7 @@ function ArticlesPagination({
       previousLinkClassName="page-link"
       renderOnZeroPageCount={null}
     />
-  );
+  )
 }
 
-export default ArticlesPagination;
+export default ArticlesPagination

@@ -1,17 +1,17 @@
 function userLogout() {
-  localStorage.removeItem("loggedUser");
+  localStorage.removeItem('loggedUser')
 
   return {
     headers: null,
     isAuth: false,
     loggedUser: {
       bio: null,
-      email: "",
+      email: '',
       image: null,
-      token: "",
-      username: "",
+      token: '',
+      username: '',
     },
-  };
+  }
 }
 
-export default userLogout;
+export default userLogout
