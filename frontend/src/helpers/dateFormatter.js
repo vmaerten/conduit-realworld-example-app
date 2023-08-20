@@ -3,5 +3,6 @@ export default function dateFormatter(date) {
     month: 'long',
     day: 'numeric',
     year: 'numeric',
+    truc: 'truc',
   })
 }

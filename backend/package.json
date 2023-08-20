@@ -6,7 +6,10 @@
     "dev": "node --watch index.js",
     "sqlz": "npx sequelize-cli",
     "start": "node index.js",
-    "test" : "vitest --run"
+    "test": "vitest --run",
+    "lint": "eslint \"**/*.{js,jsx}\"",
+    "eslint": "eslint",
+    "lint:fix": "eslint \"**/*.{js,jsx}\" --fix"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
@@ -19,7 +22,10 @@
     "sequelize": "^6.29.3"
   },
   "devDependencies": {
+    "eslint": "^8.47.0",
     "sequelize-cli": "^6.6.0",
-    "vitest": "^0.29.7"
+    "vitest": "^0.29.7",
+    "prettier": "^3.0.2",
+    "eslint-config-prettier": "^9.0.0"
   }
 }

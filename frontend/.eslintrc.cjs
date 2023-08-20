@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['prettier', 'eslint:recommended', 'plugin:react/recommended', 'plugin:prettier/recommended'],
+  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:prettier/recommended'],
   settings: {
     react: {
       version: 'detect',
@@ -15,7 +15,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'react/react-in-jsx-scope': 'off',
+    'react/react-in-jsx-scope': 'warn',
     'react/prop-types': 'off',
     'react/no-unescaped-entities': 'off',
   },
