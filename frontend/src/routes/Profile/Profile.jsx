@@ -1,10 +1,10 @@
-import { Outlet, useLocation } from "react-router-dom";
-import AuthorInfo from "../../components/AuthorInfo";
-import ContainerRow from "../../components/ContainerRow";
-import NavItem from "../../components/NavItem";
+import { Outlet, useLocation } from 'react-router-dom'
+import AuthorInfo from '../../components/AuthorInfo'
+import ContainerRow from '../../components/ContainerRow'
+import NavItem from '../../components/NavItem'
 
 function Profile() {
-  const { state } = useLocation();
+  const { state } = useLocation()
 
   return (
     <div className="profile-page">
@@ -26,7 +26,7 @@ function Profile() {
         </div>
       </ContainerRow>
     </div>
-  );
+  )
 }
 
-export default Profile;
+export default Profile

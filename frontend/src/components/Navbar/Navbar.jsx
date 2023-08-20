@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
-import NavItem from "../NavItem";
-import SourceCodeLink from "../SourceCodeLink";
-import DropdownMenu from "./DropdownMenu";
+import { Link } from 'react-router-dom'
+import { useAuth } from '../../context/AuthContext'
+import NavItem from '../NavItem'
+import SourceCodeLink from '../SourceCodeLink'
+import DropdownMenu from './DropdownMenu'
 
 function Navbar() {
-  const { isAuth } = useAuth();
+  const { isAuth } = useAuth()
 
   return (
     <nav className="navbar navbar-light">
@@ -35,6 +35,6 @@ function Navbar() {
         </ul>
       </div>
     </nav>
-  );
+  )
 }
-export default Navbar;
+export default Navbar

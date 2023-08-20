@@ -1,18 +1,18 @@
-import axios from "axios";
-import errorHandler from "../helpers/errorHandler";
+import axios from 'axios'
+import errorHandler from '../helpers/errorHandler'
 
 async function deleteComment({ commentId, headers, slug }) {
   try {
     const { data } = await axios({
       headers,
-      method: "DELETE",
+      method: 'DELETE',
       url: `api/articles/${slug}/comments/${commentId}`,
-    });
+    })
 
-    return data;
+    return data
   } catch (error) {
-    errorHandler(error);
+    errorHandler(error)
   }
 }
 
-export default deleteComment;
+export default deleteComment

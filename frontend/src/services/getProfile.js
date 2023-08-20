@@ -1,14 +1,14 @@
-import axios from "axios";
-import errorHandler from "../helpers/errorHandler";
+import axios from 'axios'
+import errorHandler from '../helpers/errorHandler'
 
 async function getProfile({ headers, username }) {
   try {
-    const { data } = await axios({ headers, url: `api/profiles/${username}` });
+    const { data } = await axios({ headers, url: `api/profiles/${username}` })
 
-    return data.profile;
+    return data.profile
   } catch (error) {
-    errorHandler(error);
+    errorHandler(error)
   }
 }
 
-export default getProfile;
+export default getProfile

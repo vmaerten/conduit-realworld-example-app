@@ -1,14 +1,14 @@
-import axios from "axios";
-import errorHandler from "../helpers/errorHandler";
+import axios from 'axios'
+import errorHandler from '../helpers/errorHandler'
 
 async function getArticle({ headers, slug }) {
   try {
-    const { data } = await axios({ headers, url: `api/articles/${slug}` });
+    const { data } = await axios({ headers, url: `api/articles/${slug}` })
 
-    return data.article;
+    return data.article
   } catch (error) {
-    errorHandler(error);
+    errorHandler(error)
   }
 }
 
-export default getArticle;
+export default getArticle

@@ -1,5 +1,5 @@
-import ContainerRow from "../components/ContainerRow";
-import SettingsForm from "../components/SettingsForm";
+import ContainerRow from '../components/ContainerRow'
+import SettingsForm from '../components/SettingsForm'
 
 function Settings() {
   return (
@@ -11,7 +11,7 @@ function Settings() {
         </div>
       </ContainerRow>
     </div>
-  );
+  )
 }
 
-export default Settings;
+export default Settings
