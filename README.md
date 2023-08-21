@@ -31,7 +31,7 @@ To install the project on your computer, follow these steps:
 1. Clone the repository to your local machine.
 
    ```bash
-   git clone https://github.com/TonyMckes/conduit-realworld-example-app.git
+   git clone https://github.com/vmaerten/conduit-realworld-example-app.git
    ```
 
 2. Navigate to the project directory.
