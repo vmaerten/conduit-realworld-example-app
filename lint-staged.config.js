@@ -1,8 +1,8 @@
 module.exports = {
     "backend/**/*.js": [
-        "eslint --fix"
+        "eslint backend/.eslintrc.cjs --fix"
     ],
     "frontend/**/*.{js,jsx}": [
-        "eslint --fix"
+        "eslint -c frontend/.eslintrc.cjs --fix"
     ]
 }
