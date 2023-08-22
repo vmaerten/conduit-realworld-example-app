@@ -8,6 +8,7 @@
     "start": "node index.js",
     "test": "vitest --run",
     "lint": "eslint \"**/*.{js,jsx}\"",
+    "eslint": "eslint",
     "lint:fix": "eslint \"**/*.{js,jsx}\" --fix"
   },
   "dependencies": {
