@@ -3,7 +3,7 @@ on:
 jobs:
   job1:
     name: test
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
     - name: test hello
       run: echo hello-world
