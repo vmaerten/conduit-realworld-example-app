@@ -10,8 +10,7 @@ jobs:
       with:
         node-version: '18.x'
     - name: Install dependencies
-      run: ls & 
-           npm install
+      run: ls
     - name: lint
       run: npm run lint:frontend
            npm run eslint
