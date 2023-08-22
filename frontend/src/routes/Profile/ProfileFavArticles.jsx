@@ -22,7 +22,7 @@ function ProfileFavArticles() {
       <ArticlesPagination articlesCount={articlesCount} location="favorites" updateArticles={setArticlesData} username={username} />
     </>
   ) : (
-    <div className="article-preview">{username} doesn't have favorites.</div>
+    <div className="article-preview">{username} doesn't have favorites...</div>
   )
 }
 
