@@ -21,7 +21,9 @@
     "start": "npm run build -w frontend && npm run start -w backend",
     "test": "npm run test -w frontend && npm run test -w backend",
     "prepare": "husky install",
-    "lint:frontend" : "eslint -c frontend/.eslintrc.cjs --fix"
+    "lint:frontend" : "eslint -c frontend/.eslintrc.cjs --fix",
+    "build:backend" : "cd ./backend/ && npm run build",
+    "build:frontend" : "cd ./frontend/ && npm run build"
   },
   "devDependencies": {
     "@vitejs/plugin-react-swc": "^3.2.0",
