@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - main
-      - composite-action-demo
+    tags:
+      - *
   workflow_dispatch:
 
 
@@ -84,6 +85,7 @@ jobs:
           path: backend/dist
       - name: Release
         uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
             frontend/dist/
