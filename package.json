@@ -18,8 +18,9 @@
   "scripts": {
     "dev": "concurrently --names 'Node,Vite' -c 'green,blue' 'npm run dev -w backend' 'npm run dev -w frontend'",
     "sqlz": "npx -w backend sequelize-cli",
-    "start": "npm run build -w frontend && npm run start -w backend",
+    "build": "npm run build -w frontend && npm run build -w backend",
     "test": "npm run test -w frontend && npm run test -w backend",
+    "lint": "npm run lint -w frontend && npm run lint -w backend",
     "prepare": "husky install",
     "lint:frontend" : "eslint -c frontend/.eslintrc.cjs --fix",
     "build:backend" : "cd ./backend/ && npm run build",
@@ -28,7 +29,7 @@
   "devDependencies": {
     "@vitejs/plugin-react-swc": "^3.2.0",
     "concurrently": "^7.6.0",
-    "husky": "^8.0.3",
+    "husky": "^8.0.2",
     "lint-staged": "^14.0.1"
   }
 }
