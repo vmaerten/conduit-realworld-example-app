@@ -1,4 +1,6 @@
 name: Integration continue
+permissions:
+  contents: write
 
 on:
   push:
@@ -154,5 +156,5 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            frontend/dist/
-            backend/dist/
+            frontend/dist/*
+            backend/dist/*
