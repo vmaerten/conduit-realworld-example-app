@@ -1,0 +1,29 @@
+name: 'Setup Node'
+description: 'Install NodeJS, handle node_module caching and run npm install'
+
+inputs:
+  node-version:
+    description: 'version de nodeJS'
+    required: false
+  run_install:
+    description: Run npm install
+    required: false
+    default: "true"
+runs:
+  using: "composite"
+  steps:
+    - name: Installation de NodeJS
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ inputs.node-version || '20.x' }}
+    - name: Cache
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    - name: Installation des dépendances
+      if: ${{ inputs.run_install == 'true' }}
+      shell: bash
+      run: npm install
