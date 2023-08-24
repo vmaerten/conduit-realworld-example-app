@@ -1,0 +1,23 @@
+name: 'setup env'
+description: 'setup node and install deps'
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v3
+    - name: Installation de NodeJS
+
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20.x
+    - name: Cache
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    - name: Installation des dépendances
+      run: npm install
+
+    
+
