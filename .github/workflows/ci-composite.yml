@@ -1,0 +1,126 @@
+name: Integration continue
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+
+jobs:
+  build-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Installation de NodeJS
+
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Installation des dépendances
+        run: npm install
+      - name: Build
+        run: npm run build -w backend
+  build-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Installation de NodeJS
+
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Installation des dépendances
+        run: npm install
+      - name: Build
+        run: npm run build -w frontend
+  test-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Installation de NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Installation des dépendances
+        run: npm install
+      - name: Test
+        run: npm run test -w backend
+  test-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Installation de NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Installation des dépendances
+        run: npm install
+      - name: Test
+        run: npm run test -w frontend
+  lint-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Installation de NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Installation des dépendances
+        run: npm install
+      - name: Lint
+        run: npm run lint -w backend
+  lint-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Installation de NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Installation des dépendances
+        run: npm install
+      - name: Lint
+        run: npm run lint -w frontend
