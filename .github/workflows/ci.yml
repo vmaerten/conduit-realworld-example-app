@@ -1,4 +1,6 @@
 name: Integration continue
+permissions:
+  contents: write
 
 on:
   push:
@@ -78,16 +80,16 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/download-artifact@v2
         with:
-          name: build-frontend
-          path: frontend/dist
+          name: build-backend
+          path: backend/dist
       - uses: actions/download-artifact@v2
         with:
           name: build-frontend
-          path: backend/dist
+          path: frontend/dist
+      - run: zip -q -r dist.zip backend/dist frontend/dist
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            frontend/dist/
-            backend/dist/
+            dist.zip
